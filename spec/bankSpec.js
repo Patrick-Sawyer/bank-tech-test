@@ -52,7 +52,7 @@ describe("bank", function () {
       expect(bank.balance).toEqual(5);
     });
     it("pushes transaction object to array", function () {
-      bank.withdraw(-6, withdrawal);
+      bank.withdraw(2, withdrawal);
       expect(bank.transactions[0]).toEqual(withdrawal);
     });
   });
@@ -67,7 +67,7 @@ describe("bank", function () {
     it("prints history", function () {
       console.log = jasmine.createSpy("log");
       bank.deposit(5, deposit);
-      bank.withdraw(6, withdrawal);
+      bank.withdraw(2, withdrawal);
       bank.statement();
       expect(console.log).toHaveBeenCalledWith(date + " || || 2.00 || 3.00");
       expect(console.log).toHaveBeenCalledWith(date + " || 5.00 || || 5.00");
